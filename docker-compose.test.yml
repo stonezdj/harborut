@@ -1,0 +1,44 @@
+version: '2'
+services:
+  registry:
+    image: firstfloor/registry-photon:v2.6.2-dev
+    restart: always
+    volumes:
+      - /data/registry:/storage
+      - ./common/config/registry/:/etc/registry/
+    ports:
+      - 5000:5000
+    command:
+      ["serve", "/etc/registry/config.yml"]
+  postgres:
+    image: firstfloor/harbor-db:dev
+    restart: always
+    volumes:
+      - /data/database:/var/lib/postgresql/data:z
+    env_file:
+      - ./common/config/db/env
+    ports:
+      - 5432:5432
+  redis:
+    image: firstfloor/redis-photon:dev
+    restart: always
+    volumes:
+      - /data/redis:/data
+    ports:
+      - 6379:6379
+  ldap_server:
+    image: firstfloor/openldap:1.1.7
+    restart: always
+    env_file:
+      - ./common/config/ldap/env
+    ports:
+      - 389:389
+      - 636:636
+  admiral:
+    image: vmware/admiral:v1.2.1
+    restart: always
+    ports:
+      - 8282:8282
+
+
+     
