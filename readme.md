@@ -12,3 +12,4 @@ CONTAINER ID        IMAGE                                   COMMAND             
 9c333ab0317c        vmware/admiral:v1.2.1                   "/entrypoint.sh"         19 seconds ago      Up 17 seconds                      0.0.0.0:8282->8282/tcp                       harborut_admiral_1
 236ba3136943        firstfloor/harbor-db:dev                "/entrypoint.sh post…"   19 seconds ago      Up 17 seconds (health: starting)   0.0.0.0:5432->5432/tcp                       harborut_postgres_1
 ```
+1. Once the IP address of your Mac is changed, or you have run some test on the env, some data might corrupt your test, then you have to rerun ./cleanut.sh
