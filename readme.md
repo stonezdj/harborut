@@ -6,6 +6,9 @@
     export IP=`ifconfig en0 |grep "inet "|awk '{print $2}' `
     ```
 1. Clone source code to Mac.
+    ```
+    git clone https://github.com/stonezdj/harborut.git 
+    ```
 1. Run ./cleanut.sh
 1. Check the container is running
     ```
@@ -18,3 +21,4 @@
     ```
 
 1. Once the IP address of your Mac is changed, or you have run some test on the env, some data might corrupt your test, then you have to rerun ./cleanut.sh
+1. Run your UT in console with go test or IDE, make sure the environment is the same with the ./cleanut.sh console env
