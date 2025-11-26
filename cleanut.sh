@@ -2,7 +2,7 @@
 
 source ./env.sh
 
-docker-compose -f docker-compose.test.yml down -v && rm -rf /data/database && docker-compose -f docker-compose.test.yml up -d
+docker compose -f docker-compose.test.yml down -v && rm -rf /data/database/* && docker compose -f docker-compose.test.yml up -d
 ./pushimage.sh
 
 #sleep 20

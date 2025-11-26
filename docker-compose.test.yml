@@ -1,7 +1,7 @@
-version: '2'
+
 services:
   registry:
-    image: firstfloor/registry-photon:v2.6.2-dev
+    image: goharbor/registry-photon:v2.14.0
     restart: always
     volumes:
       - /data/registry:/storage
@@ -11,8 +11,9 @@ services:
     command:
       ["serve", "/etc/registry/config.yml"]
   postgres:
-    image: firstfloor/harbor-db:dev
+    image: goharbor/harbor-db:v2.14.0
     restart: always
+    privileged: true
     volumes:
       - /data/database:/var/lib/postgresql/data:z
     env_file:
@@ -20,7 +21,7 @@ services:
     ports:
       - 5432:5432
   redis:
-    image: firstfloor/redis-photon:dev
+    image: goharbor/redis-photon:v2.14.0
     restart: always
     volumes:
       - /data/redis:/data
@@ -34,11 +35,6 @@ services:
     ports:
       - 389:389
       - 636:636
-  admiral:
-    image: vmware/admiral:v1.2.1
-    restart: always
-    ports:
-      - 8282:8282
 
 
      

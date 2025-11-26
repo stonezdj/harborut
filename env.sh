@@ -1,10 +1,10 @@
-export IP=`ifconfig en0 |grep "inet "|awk '{print $2}' |awk -F "/" '{print $1}'`
+export IP=`ifconfig ens192 |grep "inet "|awk '{print $2}' |awk -F "/" '{print $1}'`
 export POSTGRESQL_PWD=root123
 export POSTGRESQL_USR=postgres
 export POSTGRESQL_HOST=$IP
 export POSTGRESQL_PORT=5432
 export POSTGRESQL_DATABASE=registry
-export POSTGRES_MIGRATION_SCRIPTS_PATH=/Users/daojunz/Documents/goworkdir/src/github.com/goharbor/harbor/make/migrations/postgresql
+export POSTGRES_MIGRATION_SCRIPTS_PATH=/root/harbor/make/migrations/postgresql
 export SQLITE_FILE=/tmp/registry.db
 export ADMINSERVER_URL=http://127.0.0.1:8888
 export DOCKER_COMPOSE_VERSION=1.7.1
