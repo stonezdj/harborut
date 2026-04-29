@@ -1,7 +1,7 @@
 # Set Up Unit Test environment on Mac/Ubuntu
 
-1. Install Docker on your Mac/Ubuntu, and in Docker Preference -> File Sharing -> Add /data -> Apply and Restart
-1. vi ~/.bash_profile add the following line:
+1. Install Docker on your Mac, and in Docker Preference -> File Sharing -> Add /data -> Apply and Restart (for ubuntu, ignore this step)
+1. vi ~/.bash_profile add the following line: (Mac only)
     ```
     export IP=`ifconfig en0 |grep "inet "|awk '{print $2}' `
     ```
@@ -9,7 +9,8 @@
     ```
     git clone https://github.com/stonezdj/harborut.git
     ```
-    for Ubuntu, you need to checkout the ubuntu branch
+    for Ubuntu, you need to checkout the ubuntu branch and also change the IP address in .bashrc to your ubuntu host IP address
+    ```
 1. Run ./cleanut.sh
 1. Check the container is running
     ```
@@ -21,5 +22,5 @@ CONTAINER ID   IMAGE                              COMMAND                  CREAT
 
     ```
 
-1. Once the IP address of your Mac is changed, or you have run some test on the env, some data might corrupt your test, then you have to rerun ./cleanut.sh
+1. Once the IP address of your Mac/Ubuntu is changed, or you have run some test on the env, some data might corrupt your test, then you have to rerun ./cleanut.sh
 1. Run your UT in console with go test or IDE, make sure the environment is the same with the ./cleanut.sh console env
