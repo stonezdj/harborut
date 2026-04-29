@@ -13,12 +13,13 @@
     ```
 1. Run ./cleanut.sh
 1. Check the container is running
+
     ```
-CONTAINER ID   IMAGE                              COMMAND                  CREATED          STATUS                    PORTS                                                                              NAMES
-413af1bb42eb   goharbor/harbor-db:v2.14.0         "/docker-entrypoint.…"   39 seconds ago   Up 38 seconds (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp                                        harborut-postgres-1
-4981372bd66c   goharbor/registry-photon:v2.14.0   "/home/harbor/entryp…"   39 seconds ago   Up 38 seconds (healthy)   0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp                                        harborut-registry-1
-785ba5a217f5   firstfloor/openldap:1.1.7          "/container/tool/run"    39 seconds ago   Up 38 seconds             0.0.0.0:389->389/tcp, [::]:389->389/tcp, 0.0.0.0:636->636/tcp, [::]:636->636/tcp   harborut-ldap_server-1
-212a43b20ef6   goharbor/redis-photon:v2.14.0      "redis-server /etc/r…"   39 seconds ago   Up 38 seconds (healthy)   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp                                        harborut-redis-1
+    CONTAINER ID   IMAGE                              COMMAND                  CREATED          STATUS                    PORTS                                                                              NAMES
+    413af1bb42eb   goharbor/harbor-db:v2.14.0         "/docker-entrypoint.…"   39 seconds ago   Up 38 seconds (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp                                        harborut-postgres-1
+    4981372bd66c   goharbor/registry-photon:v2.14.0   "/home/harbor/entryp…"   39 seconds ago   Up 38 seconds (healthy)   0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp                                        harborut-registry-1
+    785ba5a217f5   firstfloor/openldap:1.1.7          "/container/tool/run"    39 seconds ago   Up 38 seconds             0.0.0.0:389->389/tcp, [::]:389->389/tcp, 0.0.0.0:636->636/tcp, [::]:636->636/tcp   harborut-ldap_server-1
+    212a43b20ef6   goharbor/redis-photon:v2.14.0      "redis-server /etc/r…"   39 seconds ago   Up 38 seconds (healthy)   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp                                        harborut-redis-1
 
     ```
 
